@@ -21,12 +21,12 @@ namespace MLNET_Practise
         public string PredictedLabels;
     }
 
-    public class SimpleTrain
+    public class CompareTrain
     {
         private string _dataPath;
         private LearningPipeline _pipeline;
 
-        public SimpleTrain(string dataPath)
+        public CompareTrain(string dataPath)
         {
             this._dataPath = dataPath;
 

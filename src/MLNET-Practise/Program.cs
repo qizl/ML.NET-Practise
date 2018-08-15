@@ -6,8 +6,8 @@ namespace MLNET_Practise
     {
         static void Main(string[] args)
         {
-            var st = new SimpleTrain("st-data.txt");
-            var r = st.Train(new S()
+            var ct = new CompareTrain("ct-data.txt");
+            var r = ct.Train(new S()
             {
                 S1 = -1,
                 S2 = 12
