@@ -6,6 +6,17 @@ namespace MLNET_Practise
     {
         static void Main(string[] args)
         {
+            var st = new SimpleTrain("st-data.txt");
+            var r = st.Train(new S()
+            {
+                S1 = 12,
+                S2 = 12
+            });
+            Console.WriteLine($"result is: {r}");
+        }
+
+        static void testIris()
+        {
             var dataPath = "iris-data.txt";
 
             //var iris = new Iris(dataPath);
