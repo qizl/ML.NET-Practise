@@ -5,7 +5,7 @@ using Microsoft.ML.Trainers;
 using Microsoft.ML.Transforms;
 using System;
 
-namespace EnjoyCodes.MLNET_Practise
+namespace MLNET_Practise
 {
     /// <summary>
     /// 参考：https://www.microsoft.com/net/learn/machine-learning-and-ai/get-started-with-ml-dotnet-tutorial
