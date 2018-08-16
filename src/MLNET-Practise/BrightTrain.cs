@@ -6,13 +6,12 @@ using Microsoft.ML.Transforms;
 
 namespace MLNET_Practise
 {
-
-    public class CompareTrain
+    public class BrightTrain
     {
         private string _dataPath;
         private LearningPipeline _pipeline;
 
-        public CompareTrain(string dataPath)
+        public BrightTrain(string dataPath)
         {
             this._dataPath = dataPath;
 
@@ -22,32 +21,31 @@ namespace MLNET_Practise
         private void init()
         {
             this._pipeline = new LearningPipeline() {
-                new TextLoader(this._dataPath).CreateFrom<s>(separator: ','),
+                new TextLoader(this._dataPath).CreateFrom<b>(separator: ','),
                 new Dictionarizer("Label"),
-                new ColumnConcatenator("Features", "S1", "S2"),
+                new ColumnConcatenator("Features", "Time"),
                 new StochasticDualCoordinateAscentClassifier(),
                 new PredictedLabelColumnOriginalValueConverter() { PredictedLabelColumn = "PredictedLabel" }
             };
         }
 
-        public string Train(float s1, float s2)
+        public string Train(float time)
         {
-            var model = this._pipeline.Train<s, sPrediction>();
-            var prediction = model.Predict(new s() { S1 = s1, S2 = s2 });
+            var model = this._pipeline.Train<b, bPrediction>();
+            var prediction = model.Predict(new b() { Time = time });
 
             return prediction.PredictedLabels;
         }
 
-        private class s
+        private class b
         {
             [Column("0")]
-            public float S1;
+            public float Time;
             [Column("1")]
-            public float S2;
-            [Column("2")]
             public string Label { get; set; }
+            //public string Alpha;
         }
-        private class sPrediction
+        private class bPrediction
         {
             [ColumnName("PredictedLabel")]
             public string PredictedLabels;

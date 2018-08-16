@@ -6,12 +6,15 @@ namespace MLNET_Practise
     {
         static void Main(string[] args)
         {
+            var ct = new BrightTrain("bt-data.txt");
+            var r = ct.Train(1555);
+            Console.WriteLine($"result is: {r}");
+        }
+
+        static void testCompare()
+        {
             var ct = new CompareTrain("ct-data.txt");
-            var r = ct.Train(new S()
-            {
-                S1 = -1,
-                S2 = 12
-            });
+            var r = ct.Train(-1, 12);
             Console.WriteLine($"result is: {r}");
         }
 
