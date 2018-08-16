@@ -39,6 +39,9 @@ namespace MLNET_Practise
 
         private class b
         {
+            /// <summary>
+            /// 时间,HHMM
+            /// </summary>
             [Column("0")]
             public float Time;
             [Column("1")]

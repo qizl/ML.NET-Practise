@@ -7,7 +7,7 @@ namespace MLNET_Practise
         static void Main(string[] args)
         {
             var ct = new BrightTrain("bt-data.txt");
-            var r = ct.Train(1555);
+            var r = ct.Train(1326);
             Console.WriteLine($"result is: {r}");
         }
 
