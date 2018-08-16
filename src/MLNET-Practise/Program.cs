@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace MLNET_Practise
 {
@@ -7,8 +10,20 @@ namespace MLNET_Practise
         static void Main(string[] args)
         {
             var ct = new BrightTrain("bt-data.txt");
-            var r = ct.Train(1326);
-            Console.WriteLine($"result is: {r}");
+
+            //var r = ct.Train(1840);
+            //Console.WriteLine($"result is: {r}");
+
+            var times = new List<float>();
+            for (float s = 1200; s <= 2400; s += 10)
+                times.Add(s);
+            var r = ct.Train(times).ToList();
+
+            var sb = new StringBuilder();
+            for (int i = 0; i < times.Count; i++)
+                sb.AppendLine($"{times[i]},{r[i]}");
+
+            Console.Write(sb.ToString());
         }
 
         static void testCompare()
