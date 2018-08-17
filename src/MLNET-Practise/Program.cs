@@ -15,7 +15,7 @@ namespace MLNET_Practise
             //Console.WriteLine($"result is: {r}");
 
             var times = new List<float>();
-            for (float s = 1200; s <= 2400; s += 10)
+            for (float s = 900; s <= 1800; s += 10)
                 times.Add(s);
             var r = ct.Train(times).ToList();
 
