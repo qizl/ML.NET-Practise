@@ -9,6 +9,19 @@ namespace MLNET_Practise
     {
         static void Main(string[] args)
         {
+            testAddr();
+            Console.ReadLine();
+        }
+
+        static void testAddr()
+        {
+            var at = new AddressTrain("addr-data.txt");
+            var r = at.Train(111);
+            Console.WriteLine($"result is: {r}");
+        }
+
+        static void testBtData()
+        {
             var ct = new BrightTrain("bt-data.txt");
 
             //var r = ct.Train(1840);
@@ -29,7 +42,7 @@ namespace MLNET_Practise
         static void testCompare()
         {
             var ct = new CompareTrain("ct-data.txt");
-            var r = ct.Train(-1, 12);
+            var r = ct.Train(13, 12);
             Console.WriteLine($"result is: {r}");
         }
 
